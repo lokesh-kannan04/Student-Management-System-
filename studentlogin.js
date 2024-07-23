@@ -91,7 +91,7 @@ app.post("/submit",async (req, res)=>
     //default page 
       app.get("/", (req, res) => {
     
-        res.render(__dirname + "/view/homepage.ejs");
+        res.render(__dirname + "/view/index.ejs");
        
         
       });
@@ -168,7 +168,7 @@ app.get("/stafflogin",(req, res)=>
 //render to homepage in nav bar
 app.get("/homepage",(req, res)=>
 {
-  res.render(__dirname + "/view/homepage.ejs");
+  res.render(__dirname + "/view/index.ejs");
 });
 
 //render to studenlogin page in nav bar
