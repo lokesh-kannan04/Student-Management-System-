@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADEMASTER</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link  href="studentlogin.css" rel="stylesheet">
+    <style>
+    
+    
+      .enrollupdate
+      {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    
+      }
+      .enrollinput, .updatestudentinput
+      {
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        padding: 10px;
+     
+        height: 100%;
+        justify-content: center;
+      }
+      
+      input
+      {
+        border:none;
+        border-bottom: 1px solid #2D4356;
+        height: 70%;
+        margin-bottom: 10px;
+      }
+      .enrollbutton
+      {
+        
+    
+        display: flex;
+        justify-content: center;
+        margin-top: 5% ;
+      }
+       nav
+       {
+        display: flex;
+        justify-content: center;
+        
+       }
+       nav button
+       {
+        width: 50%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        
+        background-color: #2D4356;
+        color: #f5e8d3;
+        border: none;
+       }
+       .staffdetails
+       {
+        padding: 10px;
+       }
+       .notactive 
+       {
+        border-bottom: 1px solid #2D4356;
+        background-color: #f5e8d3;
+        color: #2D4356;
+       }
+       .row
+       {
+        display: flex;
+        justify-content: center;
+        gap:10px;
+       }
+       .dontshow
+       {
+        display: none;
+       }
+       .updatestudentinput
+       {
+        border: 1px solid #2D4356;
+        border-top:none;
+       }
+    </style>
+ 
+</head>
+<body>
+   
+    <div>
+        <div class="studentpage">
+          <!-- navigation bar -->
+         <div class="nav1">
+            <div class="logo" >
+              <div class="image"><img src="./grade master.png"  width="100%" height="100%"></div>
+              <div class="logotext"><bold>STAFF MANAGER</bold></div>
+            </div>
+            <div class="head"><div class="staffname"><h3><%=staff.rows[0].staff_name%></h3></div></div>
+         </div>
+         <!-- sidenavigation bar above width size of 682px-->
+            <div class="mainbar" >
+             <div class="d-flex flex-column flex-shrink-0 p-3 " style="width: 100%;height: 100%;background-color: #2D4356;border-top: 1px solid #f5e8d3;">
+                 <a style="padding-right:0;width: 100%;" href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                  <div style="height:50%;width: 50%;">
+                    <svg  style="height:100%;width:100%;color:#f5e8d3"xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
+                      <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/>
+                      <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/>
+                    </svg>
+                  </div>
+                  <span class="fs-5" style="color: #f5e8d3;width: 100%;">Staff</span>
+                 </a>
+                 <hr style="color: #f5e8d3;">
+                 <ul class="nav nav-pills flex-column ">
+               
+                   <li class="cenli " data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title='StaffInfo' >
+                     <a href="/staffinfo" class="nav-link "  >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                      </svg>
+                        <span >Info</span>
+                        </a>
+                    </li>
+                   <li class="cenli " data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title='Enroll student' >
+                     <a href="/staffenroll" class="nav-link ">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                        <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0M7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0"/>
+                      </svg>
+                       <span >Enroll</span>
+                     </a>
+                   </li>
+                   <li class="cenli" data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title='Update marks and attendace' >
+                     <a href="/markscheck" class="nav-link ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+                          </svg>
+                      <span >Update</span>
+                     </a>
+                   </li>
+                   <li class="cenli view" data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title=' view studentdetails' >
+                    <a href="/viewstdetails" class="nav-link ">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-plus" viewBox="0 0 16 16">
+                        <path d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5z"/>
+                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
+                      </svg>
+                     <span>ViewStudentDetails</span>
+                    </a>
+                  </li>
+                  <br>
+                  </li>
+                  <li class="cenli" data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title='Logout' >
+                   <a href="/stafflogout" class="nav-link "  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                      <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                    </svg>
+                   <span>  Logout</span>
+                   </a>
+                 </li>
+                 </ul>
+                 <hr>
+                
+            </div>
+            
+            </div>
+         <!-- mainnavigation bar below width size of 682px-->
+        <div class="smallsidebar">
+          <div>
+            <div class="d-flex flex-column flex-shrink-0 p-3 " style="width: 100%;height: 100%;background-color: #2D4356;border-top: 1px solid #f5e8d3;">
+              <svg  style="width:100%;color:#f5e8d3"xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
+                <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/>
+                <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/>
+              </svg>
+                <hr style="color: #f5e8d3;">
+                <ul class="nav nav-pills flex-column ">
+              
+                  <li class="cenli " data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title='StaffInfo' >
+                    <a href="/staffinfo" class="nav-link "  >
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
+                       <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                       <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                     </svg>
+                       
+                       </a>
+                   </li>
+                  <li class="cenli " data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title='Enroll student' >
+                    <a href="/staffenroll" class="nav-link ">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                       <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                       <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0M7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0"/>
+                     </svg>
+                      
+                    </a>
+                  </li>
+                  <li class="cenli" data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title='Update marks and attendance' >
+                    <a href="/markscheck" class="nav-link ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+                          </svg>
+                     
+                    </a>
+                  </li>
+                  <li class="cenli view" data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title=' view studentdetails' >
+                    <a href="/viewstdetails" class="nav-link ">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-plus" viewBox="0 0 16 16">
+                        <path d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5z"/>
+                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
+                      </svg>
+                     
+                    </a>
+                  </li>
+                 </li>
+                 <li class="cenli" data-bs-toggle='tooltip' data-bs-placement='right' data-bs-title='Logout' >
+                  <a href="/stafflogout" class="nav-link "  >
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                     <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                     <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                   </svg>
+                  
+                  </a>
+                </li>
+                </ul>
+                <hr>
+               
+           </div>
+           
+       </div>
+      </div>
+          <!-- body of the staffenroll-->
+        <div class="staffdetails">
+        <div class="enrollupdate">
+          <!-- navigation bar inside the body (Enroll, updatestudent)-->
+          <div class="staffnav">
+            <br>
+            <nav>
+              <h2><u>VIEW</u></h2>
+           
+           </nav>
+          </div>
+
+          <!-- at enroll-->
+          <!-- getting course id staff id student id to enroll -->
+          <form class="enrollinput " action = '/validateid' method = "post">
+            <!-- student id-->
+             <div class="row">
+               <div class="strollno" style="width: 50%">
+                 <label>ROLL NO:</label>
+                 <input type="text" name="id"  style= "width: 100%;"id= "" placeholder="Enter student Roll No" >
+               </div>
+             </div>
+             <!-- course id-->
+             
+
+             <!-- enroll button-->
+             <div class="enrollbutton">
+                    <button type="submit" class="btn btn-primary" style = "background-color: #2D4356;color:#f5e8d3;border:none">Get details</button>
+             </div>                  
+          </form>
+
+
+        </div>
+        
+      </div>
+      <!-- footer -->
+        <div class="foote">
+          <hr style="color: #f5e8d3;">
+          <div class="footflex">
+            <div class="source">
+               <a href="/homepage" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="25"  height="25" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16" style="color:#f5e8d3">
+                  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                  <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                 
+                </svg> 
+              
+              </a>
+            </div>
+            <div class="copyright">
+             <span style="color: #f5e8d3;">© 2024/ STAFF MANAGER
+              </span>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    <!-- to create tooltip for the navigation bars-->
+   <script>
+     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+   </script>
+   <script>
+    var wasCorrect = "<%= locals.info %>";
+  console.log(wasCorrect);
+  
+  if(wasCorrect == 1)
+  {
+    alert("StudentID not found");
+  }
+ 
+   </script>
+
+</body>
+</html>

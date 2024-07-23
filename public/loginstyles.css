@@ -1,0 +1,84 @@
+      
+        .contain
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        .header
+        {
+            background-color: #2D4356;
+            flex-basis: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .header div
+        {
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding-left:20px;
+            padding-right: 20px;
+        }
+        .head1
+        {
+            display: flex;
+            justify-content: space-around;
+            margin-right: 3%;
+            
+        }
+        .header div :hover
+        {
+            background-color:#001524;
+        }
+        .header a
+        {
+            color: #f5e8d3;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .content
+        {
+            background-color:#f5e8d3;
+            flex-basis: 35rem;
+            display: flex;
+            justify-content: center;
+        }
+        form
+        {
+            margin-top: 5rem;
+            font-family: "Roboto", sans-serif;
+        }
+        label{ font-family: "Roboto", sans-serif;}
+        form input 
+        {
+            color: #2D4356;
+        }
+         fieldset label:hover
+        {
+             color:#001524;
+        }
+        .footer
+        {
+            background-color:#2D4356;
+            flex-basis: 9rem;
+            display: flex;
+        }
+        .contact
+        {
+            display: flex;
+            gap: 20px;
+            
+        }
+        .contact a
+        {
+            color: #f5e8d3;
+        }
+        .contact a:hover
+        {
+            color: #001524;
+        }
+  

@@ -1,0 +1,189 @@
+.studentpage,.staffpage
+{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 4em 35rem 6em;
+
+}
+.logo
+{
+  flex-basis: 20%;
+  display: flex;
+  
+  
+}
+.image
+{
+  flex-basis: 30%;
+  height: 100%;
+
+}
+
+.logotext
+{
+  flex-basis: 70%;
+  display: flex;
+  padding-left: 1%;
+  align-items: center;
+  background-color: #2D4356;
+  color: #f5e8d3;
+ 
+}
+.head
+{
+  flex-basis: 80%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 4%;
+  color: #f5e8d3;
+  background-color: #2D4356;
+  
+}
+
+.nav1
+{
+  grid-column: span 2;
+  display: flex;
+  
+  
+}
+
+.mainbar
+{
+    grid-row: span 2;
+}
+.foote
+{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color: #2D4356;
+    border-left: 1px solid #f5e8d3;
+}
+
+.cenli a
+{
+  width: 99%;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  color: #f5e8d3;
+
+}
+
+.cenli :hover
+{
+  
+  color: #001524;
+  
+  
+}
+
+.cenli span{
+  margin-left: 3%;
+}
+.info,.course, .marks, .attendance, .enroll, .update, .add, .view
+{
+  background-color: #001524;
+  color: #f5e8d3;
+  border: 1px solid #f5e8d3;
+
+}
+.info :hover, .course :hover, .marks :hover, .attendance :hover, .enroll :hover, .update :hover, .add :hover, .view :hover
+{
+  color:#f5e8d3
+}
+
+
+.toggle
+{
+  background-color: #001524;
+}
+.studentdetails, .studentcourses, .staffdetails
+{
+  background-color: #f5e8d3;
+  display: flex;
+  flex-direction: column;
+  color: #2D4356;
+  
+}
+input
+{
+  color: #2D4356;
+}
+input:hover
+{
+  
+  color: #001524;
+  border: 1px solid #2D4356;
+}
+
+.content-sec1
+{
+  flex-basis: 13%;
+  
+  display: flex;
+  padding-left: 3em;
+  align-items: center;
+}
+.content-sec2
+{
+  flex-basis: 87%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 3%;
+}
+.container
+{
+  display: flex;
+  justify-content: center;
+  
+}
+.row1, .row2, .row3, .row4, .row5, .row6
+{
+  
+  flex-basis: 15%;
+  display: flex;
+  align-items: center;
+  padding-left: 3%;
+  padding-right: 3%;
+  gap:2%;
+}
+.footflex
+{
+  display: flex;
+  justify-content: space-between;
+  
+}
+.source, .copyright
+{
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.smallsidebar
+{
+display: none;
+grid-row: span 2;
+}
+@media (max-width:682px)
+{
+  .mainbar
+  {
+    display: none;
+  }
+  .smallsidebar
+  {
+    display:grid; 
+    
+    
+  }
+
+}
+a svg
+{
+ margin-left: 10%;
+}
