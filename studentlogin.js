@@ -42,7 +42,7 @@ app.post("/submit",async (req, res)=>
     if(response.rowCount){
       details = response.rows[0];
       isstudentlogin = true;
-      res.render(__dirname+"/view/studentinfo.ejs",{student:details})
+      res.render(__dirname+"/view/studentInfo.ejs",{student:details})
     }else{
       res.render(__dirname +"/view/studentlogin.ejs",{wrongup: false});
     }
