@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 import pg from "pg";
 import "dotenv/config";
 
-const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
+const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, PORT } = process.env;
 let isstudentlogin = false;
 let isstafflogin = false
 const db = new pg.Client({
@@ -23,7 +23,7 @@ let details = [];
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
-const port = 3000;
+const port = PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
